@@ -22,10 +22,11 @@ if __name__ == "__main__":
     parser.add_argument('--purchaser', type=str, required=True)
     parser.add_argument('--base_year', type=int, default=2025)
     parser.add_argument('--geo', type=str, default='United States')
+    parser.add_argument('--output_dir', type=str, default='output_prompts')
     args = parser.parse_args()
     
-    os.makedirs('output_prompts', exist_ok=True)
+    os.makedirs(args.output_dir, exist_ok=True)
     for step in range(0, 11):
         filled_prompt = main(step, args.use_case, args.end_user, args.purchaser, args.base_year, args.geo)
-        with open(f'output_prompts/step_{str(step).zfill(2)}.txt', 'w') as f:
+        with open(f'{args.output_dir}/step_{str(step).zfill(2)}.txt', 'w') as f:
             f.write(filled_prompt)
