@@ -17,9 +17,9 @@ def main(step, use_case, end_user, purchaser, base_year, geo):
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
-    parser.add_argument('--use_case', type=str, default='residential decking')
-    parser.add_argument('--end_user', type=str, default='homeowners')
-    parser.add_argument('--purchaser', type=str, default='homeowners')
+    parser.add_argument('--use_case', type=str, required=True)
+    parser.add_argument('--end_user', type=str, required=True)
+    parser.add_argument('--purchaser', type=str, required=True)
     parser.add_argument('--base_year', type=int, default=2025)
     parser.add_argument('--geo', type=str, default='United States')
     args = parser.parse_args()
