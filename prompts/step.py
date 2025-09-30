@@ -1,0 +1,9 @@
+step = {
+    step: "",
+
+    goal: "",
+
+    prompt:"""
+    
+        """
+}
